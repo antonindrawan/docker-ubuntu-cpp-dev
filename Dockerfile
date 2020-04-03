@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     software-properties-common \
     tree \
+    valgrind \
     vim \
     wget \
  && rm -rf /var/lib/apt/lists
@@ -46,3 +47,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ARG CMAKE_VERSION=3.17.0
 RUN curl https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz | tar xzvf - -C /usr/local
 ENV PATH="/usr/local/cmake-3.17.0-Linux-x86_64/bin:${PATH}"
+
+# Install boost
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libboost-chrono-dev \
+    libboost-date-time-dev \
+    libboost-filesystem-dev \
+    libboost-log-dev \
+    libboost-program-options-dev \
+    libboost-regex-dev \
+    libboost-system-dev \
+    libboost-thread-dev \
+ && rm -rf /var/lib/apt/lists
