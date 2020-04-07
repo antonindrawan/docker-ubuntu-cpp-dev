@@ -40,6 +40,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libwayland-server0 \
     libgles2-mesa-dev \
     libxkbcommon-dev \
+    libxkbcommon-x11-dev \
     weston \
  && rm -rf /var/lib/apt/lists
 
