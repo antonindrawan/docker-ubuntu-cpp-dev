@@ -1,10 +1,10 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="anton.indrawan@gmail.com"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt update && apt install -y --no-install-recommends \
     apt-transport-https \
     autoconf \
     curl \
@@ -45,9 +45,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists
 
 # Install cmake
-ARG CMAKE_VERSION=3.17.0
-RUN curl https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz | tar xzvf - -C /usr/local
-ENV PATH="/usr/local/cmake-3.17.0-Linux-x86_64/bin:${PATH}"
+ARG CMAKE_VERSION=3.17.3
+RUN curl https://cmake.org/files/v3.17/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz | tar xzvf - -C /usr/local
+ENV PATH="/usr/local/cmake-${CMAKE_VERSION}-Linux-x86_64/bin:${PATH}"
 
 # Install boost
 RUN apt-get update && apt-get install -y --no-install-recommends \
