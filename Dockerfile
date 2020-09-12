@@ -47,9 +47,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists
 
 # Install cmake
-ARG CMAKE_VERSION=3.17.3
-RUN curl https://cmake.org/files/v3.17/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz | tar xzvf - -C /usr/local
-ENV PATH="/usr/local/cmake-${CMAKE_VERSION}-Linux-x86_64/bin:${PATH}"
+ARG CMAKE_VERSION=3.18
+ARG CMAKE_FULL_VERSION=3.18.2
+RUN curl https://cmake.org/files/v${CMAKE_VERSION}/cmake-${CMAKE_FULL_VERSION}-Linux-x86_64.tar.gz | tar xzvf - -C /usr/local
+ENV PATH="/usr/local/cmake-${CMAKE_FULL_VERSION}-Linux-x86_64/bin:${PATH}"
 
 # Install boost
 RUN apt-get update && apt-get install -y --no-install-recommends \
