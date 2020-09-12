@@ -14,6 +14,8 @@ RUN apt update && apt install -y --no-install-recommends \
     gdb \
     git \
     graphviz \
+    libcurl4-openssl-dev \
+    libssl-dev \
     make \
     ninja-build \
     rsync \
