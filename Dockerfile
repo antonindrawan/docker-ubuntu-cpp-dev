@@ -51,7 +51,7 @@ RUN pip3 install --upgrade pip \
  && rm /tmp/python-requirements.txt
 
 # Install cmake
-ARG CMAKE_VERSION=3.18
-ARG CMAKE_FULL_VERSION=3.18.2
-RUN curl https://cmake.org/files/v${CMAKE_VERSION}/cmake-${CMAKE_FULL_VERSION}-Linux-x86_64.tar.gz | tar xzvf - -C /usr/local
-ENV PATH="/usr/local/cmake-${CMAKE_FULL_VERSION}-Linux-x86_64/bin:${PATH}"
+ARG CMAKE_VERSION=3.20
+ARG CMAKE_FULL_VERSION=3.20.1
+RUN curl https://cmake.org/files/v${CMAKE_VERSION}/cmake-${CMAKE_FULL_VERSION}-linux-x86_64.tar.gz | tar xzvf - -C /usr/local
+ENV PATH="/usr/local/cmake-${CMAKE_FULL_VERSION}-linux-x86_64/bin:${PATH}"
